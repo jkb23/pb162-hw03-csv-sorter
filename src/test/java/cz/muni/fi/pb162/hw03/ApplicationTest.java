@@ -10,6 +10,7 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.api.io.TempDir;
 
 import java.nio.charset.Charset;
+import java.nio.charset.StandardCharsets;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
@@ -17,6 +18,7 @@ import java.util.stream.Stream;
 
 import static cz.muni.fi.pb162.hw03.TestUtils.absolutePath;
 import static cz.muni.fi.pb162.hw03.TestUtils.listDir;
+import static cz.muni.fi.pb162.hw03.TestUtils.parse;
 import static cz.muni.fi.pb162.hw03.TestUtils.resource;
 import static java.nio.charset.StandardCharsets.UTF_8;
 
@@ -25,6 +27,20 @@ public class ApplicationTest {
 
     @InjectSoftAssertions
     protected SoftAssertions softly;
+
+    @Test
+    public void sortLargeCsvFile(@TempDir Path out) throws Exception {
+        var example = resource("/040");
+        var data = example.resolve("data.csv");
+        var filters = example.resolve("filters.csv");
+
+        var stdAndErrOut = runApp(data, filters, out, "-c", "Labels");
+
+        var outFiles = listDir(out);
+
+        softly.assertThat(stdAndErrOut).isEmpty();
+        softly.assertThat(outFiles).hasSize(3);
+    }
 
     @Test
     public void sortsCsvWithDefaultLabelColumn(@TempDir Path out) throws Exception {

@@ -3,7 +3,7 @@ Homework assignment no. 3, Labeled CSV Data Sorter
 
 **Publication date:**  May 4th, 2022  
 **Submission deadline:** May 20th, 2022  
-**Points:** 15 points in total (10 points for passing tests, 5 points for clean  and efficient implementation)
+**Points:** 15 points in total (7 points for passing tests, 2 points for passing tests with ``pedantic`` profile,  5 points for clean implementation)
 
 
 Change Log
@@ -12,6 +12,7 @@ Change Log
 General Information
 -------------------
 **Note:** Unlike in previous assignments, this time you may modify ``pom.xml`` by adding dependencies.
+**Note:** Read the Compiling section of this README carefully as there is an additional test profile.
 
 The goal of this homework is to implement a simple application capable of sorting labeled data from CSV file into a set of new csv files in output directory.
 
@@ -85,11 +86,21 @@ $ mvn clean install
 The only difference is that unlike with seminar project, this time the checks for missing documentation and style violation will produce an error. You can temporarily
 disable this behavior when running this command.
 
+#### Testing for Efficient Implementation
+This time there is an additional profile defined in the build descriptor called ``pedantic``.  
+This profile severely limits the maximum available memory for JVM. However, with efficient implementation, your tests should pass even when running this profile. 
+
+To compile the project using the ``pedantic`` profile run the following
+```bash
+$ mvn clean install -Ppedantic
+```
+
 ```bash
 $ mvn clean install -Dcheckstyle.skip=true
 ```
 
-You can consult your seminar teacher to help you set the ``checkstyle.skip`` or ``iml.bonus`` properties in your IDE (or just google it).
+You can consult your seminar teacher to help you set the ``checkstyle.skip`` property in your IDE (or just google it).
+
 
 ### Submitting the assignment
 
@@ -142,6 +153,11 @@ To add the dependency, put the following inside the ``<dependencies>`` element (
 
 For the second point (Reading of CSV Files) you can use [Simple CSV Reader](https://github.com/jcechace/pb162-csv-parser) or write the code yourself. 
 If you decide to use this dependency, all the information is available via the aforementioned link (including dependency information and javadocs).
+
+### Efficient Implementation
+When working with CSV files, keep in mind that the data files can be quite large. On the other hand, you can assume that the file with filters will have a reasonable number of entries.
+You can check that your implementation is efficient by running the tests with ``pedantic`` maven profile (see the Compilation section of this README).
+
 
 
 
