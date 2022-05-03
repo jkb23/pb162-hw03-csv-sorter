@@ -1,9 +1,9 @@
-Homework assignment no. 2, Labeled CSV Data Sorter 
+Homework assignment no. 3, Labeled CSV Data Sorter 
 ====================================
 
-**Publication date:**  May 2nd, 2022  
-**Submission deadline:** May 16th, 2022  
-**Point:** TBD  
+**Publication date:**  May 4th, 2022  
+**Submission deadline:** May 20th, 2022  
+**Points:** 15 points in total (10 points for passing tests, 5 points for clean  and efficient implementation)
 
 
 Change Log
