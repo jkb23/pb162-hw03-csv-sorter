@@ -3,7 +3,7 @@ Homework Assignment no. 3, Labeled CSV Data Sorter
 
 **Publication date:**  May 4th, 2022  
 **Submission deadline:** May 20th, 2022  
-**Points:** 15 points in total (7 points for passing tests, 2 points for passing tests with the ``pedantic`` profile, 5 points for a clean implementation)
+**Points:** 15 points in total (7 points for passing tests, 3 points for passing tests with the ``pedantic`` profile, 5 points for a clean implementation)
 
 
 Change Log
@@ -18,15 +18,15 @@ The goal of this homework is to implement a simple application capable of sortin
 
 The application should support the following command line options.
 
-| CLI option (long) | CLI option  (short)   | Arguments | Default   | Required  | Description                              |
+| CLI option (long) | CLI option (short)   | Arguments | Default   | Required  | Description                              |
 | ------            | ------                | ------    | ------    | ------    |------------------------------------------|
-| --help            |                       |           |           | false     | Print application usage                  |
-| --input           | -i                    | String    |           | true      | Path of the data CSV file                |   
-| --output          | -o                    | String    |           | true      | Path of the output directory             |
-| --filters         | -f                    | String    |           | true      | Path of the filter CSV file              |
-| --column          | -c                    | String    | labels    | false     | Name of the column with labels           |
-| --delimiter       | -d                    | String    | ,         | false     | Delimiter used by CSV files              |
-| --charset         |                       | String    | UTF-8     | false     | Charset used by input (and output) files |
+| --help            |                      |           |           | false     | Print application usage                  |
+| --input           | -i                   | String    |           | true      | Path of the data CSV file                |   
+| --output          | -o                   | String    |           | true      | Path of the output directory             |
+| --filters         | -f                   | String    |           | true      | Path of the filter CSV file              |
+| --column          | -c                   | String    | labels    | false     | Name of the column with labels           |
+| --delimiter       | -d                   | String    | ,         | false     | Delimiter used by CSV files              |
+| --charset         |                      | String    | UTF-8     | false     | Charset used by input (and output) files |
 
 ### Input Format
 The application will be able to work with any ``input`` CSV file compliant with the following conditions
