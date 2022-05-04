@@ -102,6 +102,10 @@ $ mvn clean install -Dcheckstyle.skip=true
 You can consult your seminar teacher to help you set the ``checkstyle.skip`` property in your IDE (or just google it).
 
 
+### Gitlab CI Pipeline
+In order for CI pipeline to function correctly, you need to have a fork of ``"2022-hw02-labels`` in your gitlab namespace.  
+However, such fork should already be in place, provided you have followed the standard process when working on your previous assignment.
+
 ### Submitting the assignment
 
 The procedure to submit your solution may differ based on your seminar group. However, it should be generally OK to
