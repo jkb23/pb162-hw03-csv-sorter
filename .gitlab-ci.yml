@@ -23,7 +23,7 @@ build_hw02:
     - rm -rf ${HW02_PROJECT_DIR} # Remove previous build of hw02
     - git clone --branch ${HW02_GIT_BRANCH} ${HW02_GIT_REPO_URL} ${HW02_PROJECT_DIR}
     - cd ${HW02_PROJECT_DIR}
-    - mvn clean install -B
+    - mvn clean install -B -DskipTests -Dcheckstyle.skip=true
   artifacts:
     paths:
       - ${MAVEN_LOCAL_REPO}
