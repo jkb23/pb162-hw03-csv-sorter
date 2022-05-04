@@ -161,7 +161,7 @@
                         <version>${version.plugin.surefire}</version>
                         <configuration>
                             <useSystemClassLoader>false</useSystemClassLoader>
-                            <argLine>-Xmx8m</argLine>
+                            <argLine>-Xmx12m</argLine>
                         </configuration>
                     </plugin>
                 </plugins>
