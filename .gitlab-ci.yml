@@ -33,12 +33,21 @@ build_hw03:
   script:
     - mvn clean install -B -U -DskipTests
 
-test_hw03:
+.test_template:
   stage: test
+  artifacts:
+    when: always
+    reports:
+      junit:
+        - target/surefire-reports/TEST-*.xml
+
+
+test_hw03:
+  extends: .test_template
   script:
     - mvn test -B
 
 test_pedantic_hw03:
-  stage: test
+  extends: .test_template
   script:
     - mvn test -Ppedantic -B -U
